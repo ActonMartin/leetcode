@@ -48,7 +48,7 @@ class Solution:
                 isPrime[i * i:n:i] = [0] * ((n - 1 - i * i) // i + 1)
 
         return sum(isPrime)
-       
+       #
 
 # @lc code=end
 
