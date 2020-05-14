@@ -30,7 +30,7 @@ from typing import *
 #
 
 # @lc code=start
-class Solution:
+class Solution1:
     def countPrimes(self,n):
         """
         求n以内的所有质数个数（纯python代码）
@@ -48,7 +48,24 @@ class Solution:
                 isPrime[i * i:n:i] = [0] * ((n - 1 - i * i) // i + 1)
 
         return sum(isPrime)
-       # 测试0:47
+
+class Solution:
+    def countPrimes(self,n):
+        if n <= 2:
+            return 0
+        else:
+            prime=[1 for i in range(n+1)]
+            common=[]
+            for i in range(2,n):
+                if prime[i]==1:
+                    common.append(i)
+                for j in common:
+                    if i * j > n:
+                        break
+                    prime[i * j]=0
+                    if i % j == 0:
+                        break
+            return len(common)
 
 # @lc code=end
 
