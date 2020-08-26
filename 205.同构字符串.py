@@ -63,7 +63,8 @@ class Solution2:
         return [*map(s.index, s)] == [*map(t.index, t)]
 
 class Solution:
-    """ 如果s的长度和t的长度不一样，返回false
+    """
+    如果s的长度和t的长度不一样，返回false
     遍历s:利用哈希表
     如果s[i]不在哈希表中，需要考虑两种情况，如果t[i]在哈希表的value中，返回false,
                         否则返回hashtable[s[i]] = t[i]
