@@ -20,5 +20,31 @@ class Solution:
             return y
         else:
             return 0
+
+class Solution1:
+    def reverse(self, x: int) -> int:
+        if x == 0:
+            return 0
+        if x > 0:
+            str_result = self.change(x)
+            result = int(str_result)
+        if x < 0:
+            str_result = self.change(-x)
+            result = -int(str_result)
+        if -2 ** 31 < result < 2 ** 31 - 1:
+            return result
+        else:
+            return 0
+
+    def change(self, x):
+        result = ''
+        str_x = str(x)
+        for index, value in enumerate(range(len(str_x)-1, -1, -1)):
+            if index == 0 and str_x[value] == '0':
+                result = ''
+            else:
+                result += str_x[value]
+        return result
+
 # @lc code=end
 
